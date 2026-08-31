@@ -1,6 +1,6 @@
-/* =========================
+/* ================================
    ADMIN LAYOUT
-========================= */
+================================ */
 
 .admin-layout {
   display: flex;
@@ -9,22 +9,27 @@
   background: #f5f7f6;
 }
 
-/* =========================
+/* ================================
    SIDEBAR
-========================= */
+================================ */
 
 .sidebar {
   width: 250px;
   min-width: 250px;
-  min-height: 100vh;
+  height: 100vh;
+
+  position: sticky;
+  top: 0;
 
   background: #1b5e20;
   color: white;
 
-  padding: 25px;
-  box-sizing: border-box;
+  padding: 25px 20px;
 
+  box-sizing: border-box;
   flex-shrink: 0;
+
+  overflow-y: auto;
 }
 
 .sidebar h2 {
@@ -35,16 +40,17 @@
 
 .sidebar a {
   display: block;
+  width: 100%;
 
   padding: 12px 15px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+
+  box-sizing: border-box;
 
   color: white;
   text-decoration: none;
 
   border-radius: 8px;
-
-  transition: background 0.2s ease;
 }
 
 .sidebar a:hover,
@@ -52,50 +58,49 @@
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* =========================
+/* ================================
    MAIN CONTENT
-========================= */
+================================ */
 
 .admin-content {
   flex: 1;
-  min-width: 0;
   width: calc(100% - 250px);
-
-  min-height: 100vh;
+  min-width: 0;
 
   padding: 30px;
+
   box-sizing: border-box;
 
   overflow-x: hidden;
 }
 
-/* =========================
-   HAMBURGER
-========================= */
+/* ================================
+   MENU BUTTON
+================================ */
 
 .menu-btn {
   display: none;
 }
 
-/* =========================
+/* ================================
    OVERLAY
-========================= */
+================================ */
 
 .sidebar-overlay {
   display: none;
 }
 
-/* =========================
+/* ================================
    CLOSE BUTTON
-========================= */
+================================ */
 
 .sidebar-close-btn {
   display: none;
 }
 
-/* =========================
+/* ================================
    TABLET / MOBILE
-========================= */
+================================ */
 
 @media screen and (max-width: 900px) {
 
@@ -104,17 +109,7 @@
     width: 100%;
   }
 
-  /* MAIN CONTENT */
-
-  .admin-content {
-    width: 100%;
-    min-width: 0;
-
-    padding: 80px 15px 30px;
-    box-sizing: border-box;
-  }
-
-  /* HAMBURGER */
+  /* Hamburger */
 
   .menu-btn {
     display: flex;
@@ -129,6 +124,8 @@
     align-items: center;
     justify-content: center;
 
+    padding: 0;
+
     background: #1b5e20;
     color: white;
 
@@ -138,10 +135,10 @@
     font-size: 24px;
     cursor: pointer;
 
-    z-index: 10000;
+    z-index: 100000;
   }
 
-  /* SIDEBAR */
+  /* Sidebar closed */
 
   .sidebar {
     position: fixed;
@@ -150,28 +147,29 @@
     left: 0;
 
     width: 250px;
+    min-width: 250px;
     height: 100vh;
-    min-height: 100vh;
 
-    padding: 70px 25px 25px;
+    padding: 70px 20px 25px;
 
     box-sizing: border-box;
 
     background: #1b5e20;
 
     transform: translateX(-100%);
+
     transition: transform 0.3s ease;
 
-    z-index: 10002;
-
-    overflow-y: auto;
+    z-index: 100001;
   }
+
+  /* Sidebar open */
 
   .sidebar.sidebar-open {
     transform: translateX(0);
   }
 
-  /* CLOSE BUTTON */
+  /* Close button */
 
   .sidebar-close-btn {
     display: flex;
@@ -187,45 +185,55 @@
     align-items: center;
     justify-content: center;
 
-    background: rgba(255, 255, 255, 0.15);
-    color: white;
-
     border: none;
     border-radius: 6px;
 
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+
     font-size: 18px;
+
     cursor: pointer;
   }
 
-  .sidebar-close-btn:hover {
-    background: rgba(255, 255, 255, 0.25);
-  }
-
-  /* OVERLAY */
+  /* Overlay */
 
   .sidebar-overlay {
     display: block;
 
     position: fixed;
+
     inset: 0;
 
     background: rgba(0, 0, 0, 0.5);
 
-    z-index: 10001;
+    z-index: 100000;
+  }
+
+  /* Main content */
+
+  .admin-content {
+    width: 100%;
+    min-width: 0;
+
+    padding: 80px 20px 30px;
+
+    box-sizing: border-box;
   }
 }
 
-/* =========================
+/* ================================
    SMALL PHONES
-========================= */
+================================ */
 
 @media screen and (max-width: 480px) {
 
-  .sidebar {
-    width: 230px;
-  }
-
   .admin-content {
     padding: 75px 12px 25px;
+  }
+
+  .sidebar {
+    width: 230px;
+    min-width: 230px;
   }
 }
