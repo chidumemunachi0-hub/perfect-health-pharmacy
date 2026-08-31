@@ -1,208 +1,269 @@
+/* =========================
+   DELIVERY PAGE
+========================= */
+
 .delivery-page {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.delivery-page .delivery-header {
+  margin-bottom: 25px;
+}
+
+.delivery-page .delivery-header h1 {
+  margin: 0 0 8px;
+  color: #1b5e20;
+  font-size: 30px;
+}
+
+.delivery-page .delivery-header p {
+  margin: 0;
+  color: #666;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.delivery-form-card,
+.delivery-card {
+  width: 100%;
+
+  background: white;
+
+  padding: 25px;
+
+  margin-bottom: 25px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+
+  box-sizing: border-box;
+}
+
+.delivery-form-card h2,
+.delivery-card h2 {
+  margin: 0 0 20px;
+  color: #1b5e20;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.delivery-form-card form {
+  display: flex;
+
+  width: 100%;
+
+  gap: 15px;
+
+  flex-wrap: wrap;
+}
+
+.delivery-form-card input {
+  flex: 1;
+
+  min-width: 200px;
+
+  padding: 12px 14px;
+
+  border: 1px solid #ccc;
+  border-radius: 8px;
+
+  outline: none;
+
+  box-sizing: border-box;
+}
+
+.delivery-form-card input:focus {
+  border-color: #1b5e20;
+}
+
+.delivery-form-card button {
+  padding: 12px 22px;
+
+  background: #1b5e20;
+  color: white;
+
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+}
+
+.delivery-form-card button:hover {
+  background: #144817;
+}
+
+/* =========================
+   DELIVERY LIST
+========================= */
+
+.delivery-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.delivery-item {
+  display: flex;
+
+  width: 100%;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 18px;
+
+  border: 1px solid #eee;
+  border-radius: 10px;
+
+  box-sizing: border-box;
+}
+
+.delivery-info {
+  min-width: 0;
+}
+
+.delivery-info h3 {
+  margin: 0 0 6px;
+}
+
+.delivery-info p {
+  margin: 0;
+
+  color: #1b5e20;
+  font-weight: 600;
+}
+
+/* =========================
+   ACTIONS
+========================= */
+
+.delivery-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  flex-shrink: 0;
+}
+
+.edit-delivery-btn,
+.active-btn,
+.inactive-btn,
+.delete-delivery-btn {
+  padding: 9px 14px;
+
+  border: none;
+  border-radius: 7px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+}
+
+.edit-delivery-btn {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+.edit-delivery-btn:hover {
+  background: #bbdefb;
+}
+
+.active-btn {
+  background: #e8f5e9;
+  color: #1b5e20;
+}
+
+.inactive-btn {
+  background: #eee;
+  color: #666;
+}
+
+.delete-delivery-btn {
+  background: #ffebee;
+  color: #d32f2f;
+}
+
+.delete-delivery-btn:hover {
+  background: #ffcdd2;
+}
+
+/* =========================
+   EMPTY
+========================= */
+
+.empty-delivery {
+  color: #777;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media screen and (max-width: 900px) {
+
+  .delivery-page {
     width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  
-  .delivery-page .page-header {
-    margin-bottom: 25px;
-  }
-  
-  .delivery-page .page-header h1 {
-    margin-bottom: 8px;
-    color: #1b5e20;
-  }
-  
-  .delivery-page .page-header p {
-    color: #666;
-  }
-  
-  
-  /* =========================
-     FORM
-  ========================= */
-  
-  .delivery-form-card,
-  .delivery-card {
-    background: white;
-    border-radius: 12px;
-    padding: 25px;
-    margin-bottom: 25px;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
-  }
-  
-  .delivery-form-card h2,
-  .delivery-card h2 {
-    margin-bottom: 20px;
-    color: #1b5e20;
-  }
-  
-  .delivery-form-card form {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-  }
-  
-  .delivery-form-card input {
-    flex: 1;
-    min-width: 200px;
-  
-    padding: 12px 14px;
-  
-    border: 1px solid #ccc;
-    border-radius: 8px;
-  
-    outline: none;
-  }
-  
-  .delivery-form-card input:focus {
-    border-color: #1b5e20;
-  }
-  
-  .delivery-form-card button {
-    padding: 12px 22px;
-  
-    background: #1b5e20;
-    color: white;
-  
-    border: none;
-    border-radius: 8px;
-  
-    cursor: pointer;
-    font-weight: 600;
-  }
-  
-  .delivery-form-card button:hover {
-    background: #144817;
-  }
-  
-  
-  /* =========================
-     DELIVERY LIST
-  ========================= */
-  
-  .delivery-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  
-  .delivery-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  
-    gap: 20px;
-  
-    padding: 18px;
-  
-    border: 1px solid #eee;
-    border-radius: 10px;
-  }
-  
-  .delivery-info h3 {
-    margin-bottom: 6px;
-  }
-  
-  .delivery-info p {
-    color: #1b5e20;
-    font-weight: 600;
-  }
-  
-  .delivery-actions {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .active-btn,
-  .inactive-btn,
-  .delete-delivery-btn {
-    padding: 9px 14px;
-  
-    border: none;
-    border-radius: 7px;
-  
-    cursor: pointer;
-    font-weight: 600;
-  }
-  
-  .active-btn {
-    background: #e8f5e9;
-    color: #1b5e20;
-  }
-  
-  .inactive-btn {
-    background: #eee;
-    color: #666;
-  }
-  
-  .delete-delivery-btn {
-    background: #ffebee;
-    color: #d32f2f;
-  }
-  
-  .delete-delivery-btn:hover {
-    background: #ffcdd2;
-  }
-  
-  
-  /* =========================
-     EMPTY
-  ========================= */
-  
-  .empty-delivery {
-    color: #777;
+    max-width: 100%;
   }
 
-  .edit-delivery-btn {
-    padding: 9px 14px;
-    background: #e3f2fd;
-    color: #1565c0;
-    border: none;
-    border-radius: 7px;
-    cursor: pointer;
-    font-weight: 600;
+  .delivery-form-card,
+  .delivery-card {
+    padding: 20px;
   }
-  
-  .edit-delivery-btn:hover {
-    background: #bbdefb;
+
+  .delivery-form-card form {
+    flex-direction: column;
   }
-  
-  
-  /* =========================
-     MOBILE
-  ========================= */
-  
-  @media (max-width: 700px) {
-  
-    .delivery-form-card,
-    .delivery-card {
-      padding: 18px;
-    }
-  
-    .delivery-form-card form {
-      flex-direction: column;
-    }
-  
-    .delivery-form-card input,
-    .delivery-form-card button {
-      width: 100%;
-      min-width: 0;
-    }
-  
-    .delivery-item {
-      align-items: flex-start;
-      flex-direction: column;
-    }
-  
-    .delivery-actions {
-      width: 100%;
-    }
-  
-    .active-btn,
-    .inactive-btn,
-    .delete-delivery-btn {
-      flex: 1;
-    }
+
+  .delivery-form-card input {
+    width: 100%;
+    min-width: 0;
   }
+
+  .delivery-form-card button {
+    width: 100%;
+  }
+
+  .delivery-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .delivery-actions {
+    width: 100%;
+  }
+
+  .delivery-actions button {
+    flex: 1;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  .delivery-form-card,
+  .delivery-card {
+    padding: 16px;
+  }
+
+  .delivery-page .delivery-header h1 {
+    font-size: 26px;
+  }
+}

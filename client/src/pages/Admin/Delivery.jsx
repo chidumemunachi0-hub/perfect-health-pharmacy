@@ -105,8 +105,7 @@ function Delivery() {
   return (
     <div className="delivery-page">
 
-      <div className="page-header">
-        <h1>Delivery</h1>
+<div className="delivery-header">        <h1>Delivery</h1>
 
         <p>
           Manage delivery areas and delivery fees.

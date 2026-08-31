@@ -81,7 +81,10 @@ function AdminLayout() {
       Customers
     </NavLink>
 
-    <NavLink to="/admin/delivery">
+    <NavLink
+  to="/admin/delivery"
+  onClick={() => setOpen(false)}
+>
   Delivery
 </NavLink>
 

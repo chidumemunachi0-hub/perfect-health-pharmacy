@@ -101,8 +101,7 @@ function Categories() {
   return (
     <div className="categories-page">
 
-      <div className="page-header">
-        <h1>Categories</h1>
+<div className="categories-header">        <h1>Categories</h1>
         <p>Manage your product categories.</p>
       </div>
 
