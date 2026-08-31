@@ -1,0 +1,497 @@
+/* ================================
+   ORDER SUCCESS PAGE
+================================ */
+
+.order-success-page {
+    min-height: 70vh;
+    padding: 50px 20px 70px;
+    background: #f7faf8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  
+  /* ================================
+     SUCCESS ICON
+  ================================ */
+  
+  .success-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #e4f6ea;
+    color: #16833b;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    font-size: 42px;
+    font-weight: 700;
+  
+    margin-bottom: 20px;
+  
+    box-shadow: 0 5px 15px rgba(22, 131, 59, 0.12);
+  }
+  
+  
+  /* ================================
+     PAGE TITLE
+  ================================ */
+  
+  .order-success-page > h1 {
+    margin: 0;
+    color: #16833b;
+    font-size: 32px;
+    text-align: center;
+  }
+  
+  .success-message {
+    margin: 10px 0 35px;
+    color: #666;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  
+  /* ================================
+     ORDER CARD
+  ================================ */
+  
+  .order-success-card {
+    width: 100%;
+    max-width: 750px;
+  
+    background: #ffffff;
+  
+    border-radius: 14px;
+  
+    padding: 30px;
+  
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  
+    border: 1px solid #edf1ee;
+  }
+  
+  
+  /* ================================
+     ORDER HEADER
+  ================================ */
+  
+  .success-order-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    padding-bottom: 20px;
+  
+    border-bottom: 1px solid #eeeeee;
+  }
+  
+  .success-order-header h2 {
+    margin: 0;
+  
+    font-size: 21px;
+    color: #222;
+  }
+  
+  
+  /* ================================
+     STATUS
+  ================================ */
+  
+  .success-status {
+    padding: 7px 14px;
+  
+    border-radius: 20px;
+  
+    background: #e7f7ed;
+    color: #16833b;
+  
+    font-size: 13px;
+    font-weight: 600;
+  
+    text-transform: capitalize;
+  }
+  
+  
+  /* ================================
+     PRODUCTS
+  ================================ */
+  
+  .success-products {
+    padding: 25px 0;
+  }
+  
+  .success-products h3,
+  .success-delivery h3 {
+    margin: 0 0 18px;
+  
+    font-size: 18px;
+    color: #222;
+  }
+  
+  .success-product {
+    display: flex;
+    align-items: center;
+  
+    gap: 15px;
+  
+    padding: 15px 0;
+  
+    border-bottom: 1px solid #eeeeee;
+  }
+  
+  .success-product:last-child {
+    border-bottom: none;
+  }
+  
+  
+  /* PRODUCT IMAGE */
+  
+  .success-product img,
+  .success-no-image {
+    width: 65px;
+    height: 65px;
+  
+    border-radius: 8px;
+  
+    object-fit: cover;
+  
+    flex-shrink: 0;
+  }
+  
+  .success-product img {
+    border: 1px solid #eeeeee;
+  }
+  
+  .success-no-image {
+    background: #f1f3f2;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    color: #888;
+  
+    font-size: 11px;
+  }
+  
+  
+  /* PRODUCT INFO */
+  
+  .success-product-info {
+    flex: 1;
+  }
+  
+  .success-product-info h4 {
+    margin: 0 0 6px;
+  
+    font-size: 15px;
+    color: #222;
+  }
+  
+  .success-product-info p {
+    margin: 0;
+  
+    color: #777;
+  
+    font-size: 13px;
+  }
+  
+  .success-product > strong {
+    color: #16833b;
+    font-size: 15px;
+  }
+  
+  
+  /* ================================
+     DELIVERY INFORMATION
+  ================================ */
+  
+  .success-delivery {
+    padding: 25px 0;
+  
+    border-top: 1px solid #eeeeee;
+  }
+  
+  .success-delivery p {
+    margin: 10px 0;
+  
+    color: #666;
+  
+    font-size: 14px;
+  
+    line-height: 1.5;
+  }
+  
+  .success-delivery p strong {
+    color: #333;
+  }
+  
+  
+  /* ================================
+     TOTAL
+  ================================ */
+  
+  .success-total {
+    padding-top: 20px;
+  
+    border-top: 1px solid #eeeeee;
+  }
+  
+  .success-total > div {
+    display: flex;
+  
+    justify-content: space-between;
+    align-items: center;
+  
+    padding: 8px 0;
+  
+    color: #666;
+  
+    font-size: 14px;
+  }
+  
+  .success-total strong {
+    color: #333;
+  }
+  
+  .success-total .grand-total {
+    margin-top: 12px;
+  
+    padding-top: 18px;
+  
+    border-top: 1px solid #eeeeee;
+  
+    font-size: 18px;
+  
+    color: #222;
+  }
+  
+  .success-total .grand-total strong {
+    color: #16833b;
+  
+    font-size: 21px;
+  }
+  
+  
+  /* ================================
+     ACTION BUTTONS
+  ================================ */
+  
+  .success-actions {
+    display: flex;
+  
+    justify-content: center;
+  
+    gap: 15px;
+  
+    margin-top: 30px;
+  }
+  
+  .success-actions a {
+    text-decoration: none;
+  
+    padding: 12px 22px;
+  
+    border-radius: 8px;
+  
+    font-size: 14px;
+    font-weight: 600;
+  
+    transition: 0.2s ease;
+  }
+  
+  
+  /* VIEW ORDERS */
+  
+  .view-orders-btn {
+    background: #16833b;
+    color: white;
+  }
+  
+  .view-orders-btn:hover {
+    background: #116b30;
+  }
+  
+  
+  /* CONTINUE SHOPPING */
+  
+  .continue-shopping-btn {
+    background: white;
+  
+    color: #16833b;
+  
+    border: 1px solid #16833b;
+  }
+  
+  .continue-shopping-btn:hover {
+    background: #eaf7ee;
+  }
+  
+  
+  /* ================================
+     LOADING / NOT FOUND
+  ================================ */
+  
+  .order-success-page > p {
+    color: #666;
+    text-align: center;
+  }
+  
+  .order-success-page > h1 + p {
+    margin-bottom: 20px;
+  }
+
+  .success-statuses {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .success-payment-status,
+  .success-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  
+  .success-payment-status.paid {
+    background: #e8f8ed;
+    color: #159447;
+  }
+  
+  .success-payment-status.pending {
+    background: #fff5d6;
+    color: #9a7000;
+  }
+  
+  .success-payment-status.failed {
+    background: #ffe8e8;
+    color: #c62828;
+  }
+  
+  .success-status.pending {
+    background: #fff5d6;
+    color: #9a7000;
+  }
+  
+  .success-status.processing {
+    background: #e7f1ff;
+    color: #1769aa;
+  }
+  
+  .success-status.shipped {
+    background: #eee8ff;
+    color: #6a3db8;
+  }
+  
+  .success-status.delivered {
+    background: #e8f8ed;
+    color: #159447;
+  }
+  
+  .success-status.cancelled {
+    background: #ffe8e8;
+    color: #c62828;
+  }
+  
+  @media (max-width: 600px) {
+    .success-statuses {
+      gap: 6px;
+    }
+  
+    .success-payment-status,
+    .success-status {
+      font-size: 12px;
+      padding: 6px 10px;
+    }
+  }
+  
+  
+  /* ================================
+     MOBILE
+  ================================ */
+  
+  @media (max-width: 600px) {
+  
+    .order-success-page {
+      padding: 35px 15px 50px;
+    }
+  
+    .success-icon {
+      width: 70px;
+      height: 70px;
+  
+      font-size: 36px;
+    }
+  
+    .order-success-page > h1 {
+      font-size: 25px;
+    }
+  
+    .success-message {
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+  
+    .order-success-card {
+      padding: 20px;
+  
+      border-radius: 12px;
+    }
+  
+    .success-order-header {
+      align-items: flex-start;
+      gap: 10px;
+    }
+  
+    .success-order-header h2 {
+      font-size: 17px;
+    }
+  
+    .success-status {
+      font-size: 11px;
+      padding: 6px 10px;
+    }
+  
+    .success-product {
+      gap: 10px;
+    }
+  
+    .success-product img,
+    .success-no-image {
+      width: 55px;
+      height: 55px;
+    }
+  
+    .success-product-info h4 {
+      font-size: 14px;
+    }
+  
+    .success-product > strong {
+      font-size: 13px;
+    }
+  
+    .success-actions {
+      width: 100%;
+  
+      flex-direction: column;
+  
+      gap: 10px;
+    }
+  
+    .success-actions a {
+      width: 100%;
+  
+      box-sizing: border-box;
+  
+      text-align: center;
+    }
+  }

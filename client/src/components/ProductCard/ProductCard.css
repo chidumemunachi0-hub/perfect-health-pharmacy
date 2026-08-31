@@ -1,0 +1,191 @@
+.product-link {
+    text-decoration: none;
+    color: inherit;
+  
+    display: block;
+  }
+  
+  
+  /* =========================
+     CARD
+  ========================= */
+  
+  .product-card {
+    background: #ffffff;
+  
+    border: 1px solid #eeeeee;
+  
+    border-radius: 14px;
+  
+    overflow: hidden;
+  
+    height: 100%;
+  
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-6px);
+  
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.09);
+  }
+  
+  
+  /* =========================
+     PRODUCT IMAGE
+  ========================= */
+  
+  .product-card > img,
+  .no-image {
+    width: 100%;
+    height: 230px;
+  
+    object-fit: cover;
+  
+    background: #f6f8f7;
+  }
+  
+  .no-image {
+    display: flex;
+  
+    align-items: center;
+    justify-content: center;
+  
+    color: #999;
+  
+    font-size: 14px;
+  }
+  
+  
+  /* =========================
+     PRODUCT INFO
+  ========================= */
+  
+  .product-info {
+    padding: 20px;
+  
+    display: flex;
+    flex-direction: column;
+  
+    flex: 1;
+  }
+  
+  .product-info h3 {
+    margin: 0 0 10px;
+  
+    color: #222;
+  
+    font-size: 17px;
+  
+    font-weight: 600;
+  
+    line-height: 1.4;
+  }
+  
+  
+  /* =========================
+     RATING
+  ========================= */
+  
+  .rating {
+    display: flex;
+  
+    align-items: center;
+  
+    gap: 6px;
+  
+    margin-bottom: 12px;
+  
+    font-size: 14px;
+  }
+  
+  .rating svg {
+    color: #f5b301;
+  }
+  
+  .rating span {
+    color: #777;
+  }
+  
+  
+  /* =========================
+     PRICE
+  ========================= */
+  
+  .product-info h2 {
+    margin: 0 0 18px;
+  
+    color: #075c3a;
+  
+    font-size: 20px;
+  
+    font-weight: 700;
+  }
+  
+  
+  /* =========================
+     ADD TO CART
+  ========================= */
+  
+  .product-info button {
+    margin-top: auto;
+  
+    width: 100%;
+  
+    border: none;
+  
+    background: #075c3a;
+  
+    color: white;
+  
+    padding: 13px 15px;
+  
+    border-radius: 8px;
+  
+    font-size: 14px;
+  
+    font-weight: 600;
+  
+    cursor: pointer;
+  
+    display: flex;
+  
+    align-items: center;
+  
+    justify-content: center;
+  
+    gap: 8px;
+  
+    transition: background 0.25s ease;
+  }
+  
+  .product-info button:hover {
+    background: #06482e;
+  }
+  
+  .product-info button svg {
+    font-size: 15px;
+  }
+  
+  
+  /* =========================
+     MOBILE
+  ========================= */
+  
+  @media (max-width: 500px) {
+  
+    .product-card > img,
+    .no-image {
+      height: 250px;
+    }
+  
+    .product-info {
+      padding: 18px;
+    }
+  
+  }

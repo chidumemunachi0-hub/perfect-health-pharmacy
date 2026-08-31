@@ -1,0 +1,555 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fa;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 5%;
+    background: white;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    flex-wrap: wrap;
+  }
+  
+  .logo h2 {
+    color: #008753;
+    font-size: 28px;
+  }
+  
+  .logo span {
+    color: #555;
+    font-size: 14px;
+  }
+  
+  .search-box {
+    display: flex;
+    flex: 1;
+    min-width: 280px;
+    max-width: 600px;
+  }
+  
+  .search-box input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #008753;
+    border-right: none;
+    border-radius: 8px 0 0 8px;
+    outline: none;
+  }
+  
+  .search-box button {
+    background: #008753;
+    color: white;
+    border: none;
+    padding: 0 18px;
+    cursor: pointer;
+    border-radius: 0 8px 8px 0;
+  }
+  
+  .nav-icons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .login-btn,
+  .cart-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+  }
+  
+  .cart-count {
+    background: red;
+    color: white;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+  }
+  .user-profile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #1b5e20;
+    font-weight: 600;
+  }
+  
+  .user-initial {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #1b5e20;
+    color: white;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    font-size: 17px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  /* =========================
+   USER ACCOUNT MENU
+========================= */
+
+.user-menu {
+  position: relative;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #1b5e20;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.user-initial {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #1b5e20;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.user-name {
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/* =========================
+   DROPDOWN
+========================= */
+
+.account-dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+
+  width: 190px;
+
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+
+  padding: 8px 0;
+
+  z-index: 1000;
+}
+
+.account-dropdown a,
+.account-dropdown .logout-btn {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 15px;
+
+  text-decoration: none;
+
+  color: #333;
+
+  background: white;
+  border: none;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  text-align: left;
+}
+
+.account-dropdown a:hover,
+.account-dropdown .logout-btn:hover {
+  background: #f1f8f3;
+  color: #1b5e20;
+}
+
+.account-dropdown svg {
+  color: #1b5e20;
+}
+
+.account-dropdown .logout-btn {
+  color: #dc3545;
+  border-top: 1px solid #eee;
+  margin-top: 5px;
+}
+
+.account-dropdown .logout-btn svg {
+  color: #dc3545;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+/* =========================
+   ACCOUNT MENU
+========================= */
+
+.user-menu {
+  position: relative;
+  z-index: 99999;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #1b5e20;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.user-initial {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  border-radius: 50%;
+  background: #1b5e20;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.user-name {
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/* =========================
+   DROPDOWN
+========================= */
+
+.account-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+
+  width: 200px;
+
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+
+  padding: 8px 0;
+
+  z-index: 999999;
+}
+
+.account-dropdown a,
+.account-dropdown .logout-btn {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 13px 15px;
+
+  text-decoration: none;
+
+  color: #333;
+
+  background: white;
+  border: none;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  text-align: left;
+}
+
+.account-dropdown a:hover,
+.account-dropdown .logout-btn:hover {
+  background: #f1f8f3;
+  color: #1b5e20;
+}
+
+.account-dropdown svg {
+  color: #1b5e20;
+}
+
+.account-dropdown .logout-btn {
+  color: #dc3545;
+  border-top: 1px solid #eee;
+  margin-top: 5px;
+}
+
+.account-dropdown .logout-btn svg {
+  color: #dc3545;
+}
+
+
+/* =====================================
+   FINAL ACCOUNT MENU FIX
+===================================== */
+
+.navbar {
+  position: relative;
+  z-index: 999999;
+  overflow: visible !important;
+}
+
+.nav-icons {
+  position: relative;
+  z-index: 999999;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #1b5e20;
+}
+
+.user-initial {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  border-radius: 50%;
+
+  background: #1b5e20;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 17px;
+  font-weight: bold;
+}
+
+/* THE MENU */
+
+.account-dropdown {
+  position: fixed !important;
+
+  top: 70px !important;
+  right: 20px !important;
+
+  width: 210px;
+
+  background: white;
+
+  border: 1px solid #ddd;
+  border-radius: 12px;
+
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+
+  padding: 8px 0;
+
+  z-index: 2147483647 !important;
+}
+
+.account-dropdown a,
+.account-dropdown button {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 14px 16px;
+
+  background: white;
+  border: none;
+
+  text-decoration: none;
+
+  color: #333;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  text-align: left;
+}
+
+.account-dropdown a:hover {
+  background: #f1f8f3;
+}
+
+.account-dropdown svg {
+  color: #1b5e20;
+}
+
+.account-dropdown .logout-btn {
+  border-top: 1px solid #eee;
+  color: #dc3545;
+  margin-top: 5px;
+}
+
+.account-dropdown .logout-btn svg {
+  color: #dc3545;
+}
+
+
+/* PHONE */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    overflow: visible !important;
+  }
+
+  .account-dropdown {
+    position: fixed !important;
+
+    top: 60px !important;
+    right: 10px !important;
+
+    width: 200px;
+
+    z-index: 2147483647 !important;
+  }
+
+  .user-name {
+    display: none;
+  }
+
+  .user-initial {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+
+/* VERY SMALL PHONE */
+
+@media (max-width: 480px) {
+
+  .account-dropdown {
+    top: 58px !important;
+    right: 8px !important;
+    width: 190px;
+  }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    position: relative;
+    overflow: visible !important;
+    z-index: 1000;
+  }
+
+  .nav-icons {
+    position: relative;
+    z-index: 10000;
+  }
+
+  .user-menu {
+    position: relative;
+    z-index: 99999;
+  }
+
+  .user-name {
+    display: none;
+  }
+
+  .user-profile {
+    padding: 0;
+  }
+
+  .user-initial {
+    width: 35px;
+    height: 35px;
+    min-width: 35px;
+    font-size: 15px;
+  }
+
+  /*
+    IMPORTANT:
+    Fixed positioning makes the menu stay
+    inside the phone screen.
+  */
+
+  .account-dropdown {
+    position: absolute;
+
+    top: 65px;
+    right: 10px;
+
+    width: 200px;
+
+    z-index: 9999999;
+  }
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 480px) {
+
+  .account-dropdown {
+    top: 60px;
+    right: 10px;
+    width: 190px;
+  }
+
+}
