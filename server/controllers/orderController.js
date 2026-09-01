@@ -1,6 +1,5 @@
 import Order from "../models/Order.js";
-import transporter from "../config/email.js";
-
+import resend from "../config/email.js";
 // CREATE ORDER
 export const createOrder = async (req, res) => {
   try {
@@ -52,59 +51,54 @@ export const createOrder = async (req, res) => {
 
     // Send email to admin
     try {
-      await transporter.sendMail({
-        from: `"Perfect Health Pharmacy" <${process.env.EMAIL_USER}>`,
+      await resend.emails.send({
+        from: "Perfect Health Pharmacy <onboarding@resend.dev>",
         to: process.env.ADMIN_EMAIL,
-
+      
         subject: `🛒 New Order #${populatedOrder._id}`,
-
+      
         text: `
-NEW ORDER RECEIVED
-==============================
-
-Order ID:
-${populatedOrder._id}
-
-CUSTOMER
-==============================
-Name: ${populatedOrder.customer?.name || "Unknown"}
-Email: ${populatedOrder.customer?.email || "N/A"}
-Phone: ${populatedOrder.phone}
-
-ORDER ITEMS
-==============================
-${productList}
-
-TOTAL
-==============================
-₦${Number(
-  populatedOrder.totalAmount
-).toLocaleString()}
-
-DELIVERY
-==============================
-Method: ${populatedOrder.delivery || "Home Delivery"}
-
-Delivery Area:
-${populatedOrder.deliveryArea || "N/A"}
-
-Delivery Fee:
-₦${Number(
-  populatedOrder.deliveryFee || 0
-).toLocaleString()}
-
-Address:
-${populatedOrder.address}
-
-Order Status:
-${populatedOrder.status}
-
-==============================
-Perfect Health Pharmacy
-Pharmacy & Superstore
+      NEW ORDER RECEIVED
+      ==============================
+      
+      Order ID:
+      ${populatedOrder._id}
+      
+      CUSTOMER
+      ==============================
+      Name: ${populatedOrder.customer?.name || "Unknown"}
+      Email: ${populatedOrder.customer?.email || "N/A"}
+      Phone: ${populatedOrder.phone || "N/A"}
+      
+      ORDER ITEMS
+      ==============================
+      ${productList}
+      
+      TOTAL
+      ==============================
+      ₦${Number(populatedOrder.totalAmount).toLocaleString()}
+      
+      DELIVERY
+      ==============================
+      Method: ${populatedOrder.delivery || "Home Delivery"}
+      
+      Delivery Area:
+      ${populatedOrder.deliveryArea || "N/A"}
+      
+      Delivery Fee:
+      ₦${Number(populatedOrder.deliveryFee || 0).toLocaleString()}
+      
+      Address:
+      ${populatedOrder.address}
+      
+      Order Status:
+      ${populatedOrder.status}
+      
+      ==============================
+      Perfect Health Pharmacy
+      Pharmacy & Superstore
         `,
       });
-
       console.log("ORDER EMAIL SENT ✅");
 
     } catch (emailError) {
@@ -194,47 +188,46 @@ export const updateOrder = async (req, res) => {
       order.customer?.email
     ) {
       try {
-        await transporter.sendMail({
-          from: `"Perfect Health Pharmacy" <${process.env.EMAIL_USER}>`,
+        await resend.emails.send({
+          from: "Perfect Health Pharmacy <onboarding@resend.dev>",
           to: order.customer.email,
-
+        
           subject: `📦 Your Order #${order._id
             .toString()
             .slice(-6)
             .toUpperCase()} is ${order.status}`,
-
+        
           text: `
-Hello ${order.customer.name || "Customer"},
-
-Your Perfect Health Pharmacy order has been updated.
-
-ORDER #${order._id
+        Hello ${order.customer.name || "Customer"},
+        
+        Your Perfect Health Pharmacy order has been updated.
+        
+        ORDER #${order._id
             .toString()
             .slice(-6)
             .toUpperCase()}
-
-Previous Status:
-${oldStatus}
-
-New Status:
-${order.status}
-
-Total:
-₦${Number(order.totalAmount).toLocaleString()}
-
-Delivery:
-${order.delivery}
-
-Address:
-${order.address}
-
-Thank you for shopping with Perfect Health Pharmacy.
-
-Perfect Health Pharmacy
-Pharmacy & Superstore
+        
+        Previous Status:
+        ${oldStatus}
+        
+        New Status:
+        ${order.status}
+        
+        Total:
+        ₦${Number(order.totalAmount).toLocaleString()}
+        
+        Delivery:
+        ${order.delivery}
+        
+        Address:
+        ${order.address}
+        
+        Thank you for shopping with Perfect Health Pharmacy.
+        
+        Perfect Health Pharmacy
+        Pharmacy & Superstore
           `,
         });
-
         console.log("CUSTOMER STATUS EMAIL SENT ✅");
 
       } catch (emailError) {
@@ -323,49 +316,49 @@ export const cancelOrder = async (req, res) => {
     // =========================
 
     try {
-      await transporter.sendMail({
-        from: `"Perfect Health Pharmacy" <${process.env.EMAIL_USER}>`,
+      await resend.emails.send({
+        from: "Perfect Health Pharmacy <onboarding@resend.dev>",
         to: process.env.ADMIN_EMAIL,
-
+      
         subject: `🚨 Order #${order._id
           .toString()
           .slice(-6)
           .toUpperCase()} Cancelled`,
-
+      
         text: `
-ORDER CANCELLED
-==============================
-
-Order ID:
-${order._id}
-
-CUSTOMER
-==============================
-Name: ${order.customer?.name || "Unknown"}
-Email: ${order.customer?.email || "N/A"}
-Phone: ${order.phone || "N/A"}
-
-ORDER
-==============================
-Previous Status: ${previousStatus}
-New Status: Cancelled
-
-TOTAL
-==============================
-₦${Number(order.totalAmount).toLocaleString()}
-
-DELIVERY
-==============================
-Method: ${order.delivery || "Home Delivery"}
-
-Address:
-${order.address || "N/A"}
-
-==============================
-The customer has cancelled this order.
-
-Perfect Health Pharmacy
-Pharmacy & Superstore
+      ORDER CANCELLED
+      ==============================
+      
+      Order ID:
+      ${order._id}
+      
+      CUSTOMER
+      ==============================
+      Name: ${order.customer?.name || "Unknown"}
+      Email: ${order.customer?.email || "N/A"}
+      Phone: ${order.phone || "N/A"}
+      
+      ORDER
+      ==============================
+      Previous Status: ${previousStatus}
+      New Status: Cancelled
+      
+      TOTAL
+      ==============================
+      ₦${Number(order.totalAmount).toLocaleString()}
+      
+      DELIVERY
+      ==============================
+      Method: ${order.delivery || "Home Delivery"}
+      
+      Address:
+      ${order.address || "N/A"}
+      
+      ==============================
+      The customer has cancelled this order.
+      
+      Perfect Health Pharmacy
+      Pharmacy & Superstore
         `,
       });
 
