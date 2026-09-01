@@ -18,8 +18,7 @@ export const initializePayment = async (req, res) => {
       {
         email,
         amount: Math.round(Number(amount) * 100),
-        callback_url: "http://localhost:5173/payment-success",
-      },
+        callback_url: "https://perfect-health-pharmacy.vercel.app/payment-success",      },
       {
         headers: {
           Authorization: `Bearer ${process.env.PAYSTACK_SECRET_KEY}`,
