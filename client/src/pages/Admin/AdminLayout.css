@@ -1,18 +1,18 @@
-/* =========================================
+/* ==============================
    ADMIN LAYOUT
-========================================= */
+============================== */
 
 .admin-layout {
   display: flex;
-  width: 100%;
   min-height: 100vh;
+  width: 100%;
   background: #f5f7f6;
 }
 
 
-/* =========================================
-   SIDEBAR - DESKTOP
-========================================= */
+/* ==============================
+   SIDEBAR
+============================== */
 
 .sidebar {
   width: 250px;
@@ -22,17 +22,16 @@
   position: sticky;
   top: 0;
 
-  background: #1b5e20;
-  color: white;
+  box-sizing: border-box;
 
   padding: 25px 20px;
 
-  box-sizing: border-box;
-  flex-shrink: 0;
+  background: #1b5e20;
+  color: white;
 
   overflow-y: auto;
 
-  z-index: 1000;
+  z-index: 10;
 }
 
 .sidebar h2 {
@@ -43,19 +42,17 @@
 
 .sidebar a {
   display: block;
+
   width: 100%;
+  box-sizing: border-box;
 
   padding: 12px 15px;
   margin-bottom: 8px;
-
-  box-sizing: border-box;
 
   color: white;
   text-decoration: none;
 
   border-radius: 8px;
-
-  transition: background 0.2s ease;
 }
 
 .sidebar a:hover,
@@ -64,26 +61,24 @@
 }
 
 
-/* =========================================
-   ADMIN CONTENT
-========================================= */
+/* ==============================
+   CONTENT
+============================== */
 
 .admin-content {
   flex: 1;
-  width: calc(100% - 250px);
   min-width: 0;
 
   padding: 30px;
-
   box-sizing: border-box;
 
   overflow-x: hidden;
 }
 
 
-/* =========================================
-   HAMBURGER BUTTON
-========================================= */
+/* ==============================
+   HAMBURGER
+============================== */
 
 .menu-btn {
   display: none;
@@ -97,122 +92,59 @@
   height: 48px;
 
   border: none;
-  outline: none;
-
-  cursor: pointer;
-
-  align-items: center;
-  justify-content: center;
+  border-radius: 8px;
 
   background: #1b5e20;
   color: white;
 
-  border-radius: 10px;
-
-  font-size: 27px;
-  line-height: 1;
-
-  z-index: 2002;
-
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-
-  -webkit-tap-highlight-color: transparent;
-}
-
-.menu-btn:active {
-  transform: scale(0.95);
-}
-
-
-/* =========================================
-   SIDEBAR OVERLAY
-========================================= */
-
-.sidebar-overlay {
-  display: none;
-
-  position: fixed;
-
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 100vh;
-
-  background: rgba(0, 0, 0, 0.5);
-
-  z-index: 1999;
-}
-
-
-/* =========================================
-   CLOSE BUTTON
-========================================= */
-
-.sidebar-close-btn {
-  display: none;
-
-  position: absolute;
-
-  top: 15px;
-  right: 15px;
-
-  width: 40px;
-  height: 40px;
-
-  border: none;
-  outline: none;
-
-  background: rgba(255, 255, 255, 0.15);
-  color: white;
-
-  border-radius: 50%;
-
-  font-size: 22px;
-  line-height: 1;
+  font-size: 28px;
 
   cursor: pointer;
 
   align-items: center;
   justify-content: center;
 
-  z-index: 2003;
-}
-
-.sidebar-close-btn:hover {
-  background: rgba(255, 255, 255, 0.25);
+  z-index: 1002;
 }
 
 
-/* =========================================
-   TABLET + MOBILE
-========================================= */
+/* ==============================
+   OVERLAY
+============================== */
 
-@media screen and (max-width: 768px) {
+.sidebar-overlay {
+  display: none;
+}
 
-  /* -----------------------------------------
-     MAIN LAYOUT
-  ----------------------------------------- */
+
+/* ==============================
+   CLOSE BUTTON
+============================== */
+
+.sidebar-close-btn {
+  display: none;
+}
+
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media (max-width: 768px) {
 
   .admin-layout {
     display: block;
-    width: 100%;
-    min-height: 100vh;
   }
 
 
-  /* -----------------------------------------
-     HAMBURGER
-  ----------------------------------------- */
+  /* HAMBURGER */
 
   .menu-btn {
     display: flex;
   }
 
 
-  /* -----------------------------------------
-     SIDEBAR
-  ----------------------------------------- */
+  /* SIDEBAR */
 
   .sidebar {
     position: fixed;
@@ -222,248 +154,121 @@
 
     width: 280px;
     min-width: 280px;
+
     height: 100vh;
 
     padding: 25px 20px;
 
-    z-index: 2000;
+    box-sizing: border-box;
 
-    /*
-      Start hidden outside the screen
-    */
+    background: #1b5e20;
+
+    z-index: 1001;
+
     transform: translateX(-100%);
 
     transition: transform 0.3s ease;
-
-    box-shadow: none;
-
-    overflow-y: auto;
   }
 
 
-  /* -----------------------------------------
-     OPEN SIDEBAR
-  ----------------------------------------- */
+  /* SIDEBAR OPEN */
 
   .sidebar.sidebar-open {
-    transform: translateX(0);
-
-    box-shadow: 5px 0 25px rgba(0, 0, 0, 0.25);
+    transform: translateX(0) !important;
+    background: red !important;
   }
 
 
-  /* -----------------------------------------
-     SIDEBAR TITLE
-  ----------------------------------------- */
-
-  .sidebar h2 {
-    margin-top: 10px;
-    margin-bottom: 35px;
-
-    padding-right: 45px;
-
-    font-size: 22px;
-  }
-
-
-  /* -----------------------------------------
-     SIDEBAR LINKS
-  ----------------------------------------- */
-
-  .sidebar a {
-    padding: 14px 15px;
-
-    margin-bottom: 8px;
-
-    font-size: 16px;
-  }
-
-
-  /* -----------------------------------------
-     CLOSE BUTTON
-  ----------------------------------------- */
-
-  .sidebar-close-btn {
-    display: flex;
-  }
-
-
-  /* -----------------------------------------
-     OVERLAY
-  ----------------------------------------- */
+  /* OVERLAY */
 
   .sidebar-overlay {
     display: block;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    z-index: 1000;
   }
 
 
-  /* -----------------------------------------
-     ADMIN CONTENT
-  ----------------------------------------- */
+  /* CLOSE BUTTON */
+
+  .sidebar-close-btn {
+    display: flex;
+
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    width: 40px;
+    height: 40px;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    z-index: 1003;
+  }
+
+
+  /* SIDEBAR TITLE */
+
+  .sidebar h2 {
+    margin-top: 10px;
+    padding-right: 45px;
+  }
+
+
+  /* CONTENT */
 
   .admin-content {
     width: 100%;
-    min-width: 0;
 
-    padding: 75px 20px 30px;
-
-    box-sizing: border-box;
+    padding: 80px 20px 30px;
   }
 }
 
 
-/* =========================================
+/* ==============================
    SMALL PHONES
-========================================= */
+============================== */
 
-@media screen and (max-width: 480px) {
+@media (max-width: 480px) {
 
   .menu-btn {
     top: 12px;
     left: 12px;
 
-    width: 46px;
-    height: 46px;
+    width: 45px;
+    height: 45px;
 
     font-size: 25px;
   }
 
-
   .sidebar {
     width: 270px;
     min-width: 270px;
-
-    padding: 22px 18px;
   }
-
-
-  .sidebar h2 {
-    font-size: 21px;
-
-    margin-bottom: 30px;
-  }
-
-
-  .sidebar a {
-    padding: 13px 14px;
-
-    font-size: 15px;
-  }
-
-
-  .sidebar-close-btn {
-    top: 12px;
-    right: 12px;
-
-    width: 38px;
-    height: 38px;
-
-    font-size: 20px;
-  }
-
 
   .admin-content {
     padding: 70px 15px 25px;
   }
-}
-
-
-/* =========================================
-   VERY SMALL PHONES
-========================================= */
-
-@media screen and (max-width: 360px) {
-
-  .sidebar {
-    width: 250px;
-    min-width: 250px;
-  }
-
-  .admin-content {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-}
-
-
-/* =========================================
-   PREVENT HORIZONTAL SCROLL
-========================================= */
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-
-  width: 100%;
-
-  overflow-x: hidden;
-}
-
-
-/* =========================================
-   MOBILE MENU LAYER ORDER
-========================================= */
-
-/*
-   IMPORTANT:
-
-   Hamburger = 2002
-   Sidebar   = 2000
-   Overlay   = 1999
-
-   Therefore:
-
-   Hamburger
-       ↓
-   Sidebar
-       ↓
-   Overlay
-       ↓
-   Dashboard
-*/
-
-.menu-btn {
-  z-index: 2002;
-}
-
-.sidebar {
-  z-index: 2000;
-}
-
-.sidebar-overlay {
-  z-index: 1999;
-}
-
-.sidebar-close-btn {
-  z-index: 2003;
-}
-
-
-/* =========================================
-   REMOVE TAP HIGHLIGHT
-========================================= */
-
-.menu-btn,
-.sidebar-close-btn,
-.sidebar a {
-  -webkit-tap-highlight-color: transparent;
-}
-
-
-/* =========================================
-   SCROLLBAR
-========================================= */
-
-.sidebar::-webkit-scrollbar {
-  width: 5px;
-}
-
-.sidebar::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 10px;
-}
-
-.sidebar::-webkit-scrollbar-track {
-  background: transparent;
 }
