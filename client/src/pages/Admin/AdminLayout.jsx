@@ -28,9 +28,7 @@ function AdminLayout() {
   )}
 
   {/* Sidebar */}
-  <aside
-    className={`sidebar ${open ? "sidebar-open" : ""}`}
-  >
+  <aside className={`sidebar ${open ? "sidebar-open" : ""}`}>
 
     {/* Close button */}
     {open && (

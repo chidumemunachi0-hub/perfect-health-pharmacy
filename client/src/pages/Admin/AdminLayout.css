@@ -11,7 +11,7 @@
 
 
 /* =========================================
-   SIDEBAR
+   SIDEBAR - DESKTOP
 ========================================= */
 
 .sidebar {
@@ -31,6 +31,8 @@
   flex-shrink: 0;
 
   overflow-y: auto;
+
+  z-index: 1000;
 }
 
 .sidebar h2 {
@@ -52,6 +54,8 @@
   text-decoration: none;
 
   border-radius: 8px;
+
+  transition: background 0.2s ease;
 }
 
 .sidebar a:hover,
@@ -78,11 +82,19 @@
 
 
 /* =========================================
-   HAMBURGER
+   HAMBURGER BUTTON
 ========================================= */
 
 .menu-btn {
   display: none;
+
+  position: fixed;
+
+  top: 15px;
+  left: 15px;
+
+  width: 48px;
+  height: 48px;
 
   border: none;
   outline: none;
@@ -95,18 +107,41 @@
   background: #1b5e20;
   color: white;
 
-  border-radius: 8px;
+  border-radius: 10px;
 
-  font-size: 24px;
+  font-size: 27px;
+  line-height: 1;
+
+  z-index: 2002;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+.menu-btn:active {
+  transform: scale(0.95);
 }
 
 
 /* =========================================
-   OVERLAY
+   SIDEBAR OVERLAY
 ========================================= */
 
 .sidebar-overlay {
   display: none;
+
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  background: rgba(0, 0, 0, 0.5);
+
+  z-index: 1999;
 }
 
 
@@ -116,6 +151,36 @@
 
 .sidebar-close-btn {
   display: none;
+
+  position: absolute;
+
+  top: 15px;
+  right: 15px;
+
+  width: 40px;
+  height: 40px;
+
+  border: none;
+  outline: none;
+
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+
+  border-radius: 50%;
+
+  font-size: 22px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  align-items: center;
+  justify-content: center;
+
+  z-index: 2003;
+}
+
+.sidebar-close-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
 }
 
 
@@ -123,7 +188,11 @@
    TABLET + MOBILE
 ========================================= */
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 768px) {
+
+  /* -----------------------------------------
+     MAIN LAYOUT
+  ----------------------------------------- */
 
   .admin-layout {
     display: block;
@@ -132,36 +201,18 @@
   }
 
 
-  /* -------------------------
+  /* -----------------------------------------
      HAMBURGER
-  ------------------------- */
+  ----------------------------------------- */
 
   .menu-btn {
     display: flex;
-
-    position: fixed;
-
-    top: 15px;
-    left: 15px;
-
-    width: 45px;
-    height: 45px;
-
-    padding: 0;
-
-    z-index: 10001;
-
-    box-sizing: border-box;
-  }
-
-  .menu-btn.menu-hidden {
-    display: none;
   }
 
 
-  /* -------------------------
+  /* -----------------------------------------
      SIDEBAR
-  ------------------------- */
+  ----------------------------------------- */
 
   .sidebar {
     position: fixed;
@@ -169,150 +220,94 @@
     top: 0;
     left: 0;
 
-    width: 250px;
-    min-width: 250px;
-
+    width: 280px;
+    min-width: 280px;
     height: 100vh;
 
-    padding: 70px 20px 25px;
+    padding: 25px 20px;
 
-    box-sizing: border-box;
+    z-index: 2000;
 
-    background: #1b5e20;
-
+    /*
+      Start hidden outside the screen
+    */
     transform: translateX(-100%);
 
     transition: transform 0.3s ease;
 
-    z-index: 10000;
+    box-shadow: none;
 
     overflow-y: auto;
   }
 
 
+  /* -----------------------------------------
+     OPEN SIDEBAR
+  ----------------------------------------- */
+
   .sidebar.sidebar-open {
     transform: translateX(0);
+
+    box-shadow: 5px 0 25px rgba(0, 0, 0, 0.25);
   }
 
 
-  /* -------------------------
+  /* -----------------------------------------
      SIDEBAR TITLE
-  ------------------------- */
+  ----------------------------------------- */
 
   .sidebar h2 {
-    color: white;
+    margin-top: 10px;
+    margin-bottom: 35px;
 
-    margin: 0 0 30px;
+    padding-right: 45px;
 
     font-size: 22px;
   }
 
 
-  /* -------------------------
+  /* -----------------------------------------
      SIDEBAR LINKS
-  ------------------------- */
+  ----------------------------------------- */
 
   .sidebar a {
-    display: block;
-
-    width: 100%;
-
-    padding: 12px 15px;
+    padding: 14px 15px;
 
     margin-bottom: 8px;
 
-    box-sizing: border-box;
-
-    color: white;
-
-    text-decoration: none;
-
-    border-radius: 8px;
+    font-size: 16px;
   }
 
 
-  .sidebar a:hover,
-  .sidebar a.active {
-    background: rgba(255, 255, 255, 0.2);
-  }
-
-
-  /* -------------------------
+  /* -----------------------------------------
      CLOSE BUTTON
-  ------------------------- */
+  ----------------------------------------- */
 
   .sidebar-close-btn {
     display: flex;
-
-    position: absolute;
-
-    top: 15px;
-    right: 15px;
-
-    width: 35px;
-    height: 35px;
-
-    padding: 0;
-
-    align-items: center;
-    justify-content: center;
-
-    background: rgba(255, 255, 255, 0.15);
-
-    color: white;
-
-    border: none;
-    border-radius: 6px;
-
-    font-size: 18px;
-
-    cursor: pointer;
-
-    z-index: 10002;
   }
 
 
-  .sidebar-close-btn:hover {
-    background: rgba(255, 255, 255, 0.25);
-  }
-
-
-  /* -------------------------
+  /* -----------------------------------------
      OVERLAY
-  ------------------------- */
+  ----------------------------------------- */
 
   .sidebar-overlay {
     display: block;
-
-    position: fixed;
-
-    inset: 0;
-
-    width: 100%;
-    height: 100vh;
-
-    background: rgba(0, 0, 0, 0.5);
-
-    z-index: 9999;
   }
 
 
-  /* -------------------------
-     MAIN CONTENT
-  ------------------------- */
+  /* -----------------------------------------
+     ADMIN CONTENT
+  ----------------------------------------- */
 
   .admin-content {
     width: 100%;
-
     min-width: 0;
 
-    min-height: 100vh;
-
-    padding: 80px 20px 30px;
+    padding: 75px 20px 30px;
 
     box-sizing: border-box;
-
-    overflow-x: hidden;
   }
 }
 
@@ -323,19 +318,152 @@
 
 @media screen and (max-width: 480px) {
 
+  .menu-btn {
+    top: 12px;
+    left: 12px;
+
+    width: 46px;
+    height: 46px;
+
+    font-size: 25px;
+  }
+
+
   .sidebar {
-    width: 230px;
-    min-width: 230px;
+    width: 270px;
+    min-width: 270px;
+
+    padding: 22px 18px;
+  }
+
+
+  .sidebar h2 {
+    font-size: 21px;
+
+    margin-bottom: 30px;
+  }
+
+
+  .sidebar a {
+    padding: 13px 14px;
+
+    font-size: 15px;
+  }
+
+
+  .sidebar-close-btn {
+    top: 12px;
+    right: 12px;
+
+    width: 38px;
+    height: 38px;
+
+    font-size: 20px;
+  }
+
+
+  .admin-content {
+    padding: 70px 15px 25px;
+  }
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media screen and (max-width: 360px) {
+
+  .sidebar {
+    width: 250px;
+    min-width: 250px;
   }
 
   .admin-content {
-    padding: 75px 12px 25px;
+    padding-left: 12px;
+    padding-right: 12px;
   }
+}
 
-  .menu-btn {
-    width: 42px;
-    height: 42px;
 
-    font-size: 22px;
-  }
+/* =========================================
+   PREVENT HORIZONTAL SCROLL
+========================================= */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================
+   MOBILE MENU LAYER ORDER
+========================================= */
+
+/*
+   IMPORTANT:
+
+   Hamburger = 2002
+   Sidebar   = 2000
+   Overlay   = 1999
+
+   Therefore:
+
+   Hamburger
+       ↓
+   Sidebar
+       ↓
+   Overlay
+       ↓
+   Dashboard
+*/
+
+.menu-btn {
+  z-index: 2002;
+}
+
+.sidebar {
+  z-index: 2000;
+}
+
+.sidebar-overlay {
+  z-index: 1999;
+}
+
+.sidebar-close-btn {
+  z-index: 2003;
+}
+
+
+/* =========================================
+   REMOVE TAP HIGHLIGHT
+========================================= */
+
+.menu-btn,
+.sidebar-close-btn,
+.sidebar a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+.sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
 }
